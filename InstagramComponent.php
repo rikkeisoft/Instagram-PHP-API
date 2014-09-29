@@ -5,14 +5,14 @@ App::uses("Component", "Controller");
 /**
  * InstagramComponent
  * API Documentation: http://instagram.com/developer/
- * Class Documentation: https://github.com/cosenary/Instagram-PHP-API/tree/dev
+ * Class Documentation: https://github.com/rikkeisoft/Instagram-PHP-API/tree/dev
  *
  * @author    Christian Metz
  * @since     30.10.2011
  * @last_modified 29.09.2014
  * @copyright Christian Metz - MetzWeb Networks 2011-2014
  * @modified  HuyNQ <huynq@rikkeisoft.com>
- * @version   2.1
+ * @version   2.2
  * @license   BSD http://www.opensource.org/licenses/bsd-license.php
  */
 class InstagramComponent extends Component
