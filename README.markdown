@@ -1,8 +1,8 @@
-# ![Image](https://raw.github.com/cosenary/Instagram-PHP-API/master/example/assets/instagram.png) Instagram PHP API V2
+# ![Image](https://raw.github.com/rikkeisoft/Instagram-PHP-API/master/example/assets/instagram.png) Instagram PHP API V2
 
 ## About
 
-A PHP wrapper for the Instagram API.  
+A PHP wrapper class & CakePHP's Component for the Instagram API.  
 Feedback or bug reports are appreciated.
 
 > Supports [Instagram video](#instagram-videos) responses.
@@ -344,6 +344,10 @@ Credit for the awesome Instagram icons goes to [Ricardo de Zoete Pro](http://dri
 > Let me know if you have to share a code example, too.
 
 ## History
+
+**Instagram 2.2 - 29/09/2014**
+- Add `verifyAccessToken` function
+- Add CakePHP's Component version
 
 **Instagram 2.1 - 30/01/2014**
 
