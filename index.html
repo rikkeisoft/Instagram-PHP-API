@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Instagram PHP API by cosenary</title>
+    <title>Instagram PHP API by rikkeisoft</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -16,25 +16,26 @@
     <div class="wrapper">
       <header>
         <h1>Instagram PHP API</h1>
-        <p>An easy-to-use PHP Class for accessing Instagram's API.</p>
+        <p>An easy-to-use PHP Class &amp; CakePHP&#39;s Component for accessing Instagram&#39;s API.</p>
 
-        <p class="view"><a href="https://github.com/cosenary/Instagram-PHP-API">View the Project on GitHub <small>cosenary/Instagram-PHP-API</small></a></p>
+        <p class="view"><a href="https://github.com/rikkeisoft/Instagram-PHP-API">View the Project on GitHub <small>rikkeisoft/Instagram-PHP-API</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/cosenary/Instagram-PHP-API/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/cosenary/Instagram-PHP-API/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/cosenary/Instagram-PHP-API">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/rikkeisoft/Instagram-PHP-API/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/rikkeisoft/Instagram-PHP-API/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/rikkeisoft/Instagram-PHP-API">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h1>
-<a name="-instagram-php-api-v2" class="anchor" href="#-instagram-php-api-v2"><span class="octicon octicon-link"></span></a><img src="https://raw.github.com/cosenary/Instagram-PHP-API/master/example/assets/instagram.png" alt="Image"> Instagram PHP API V2</h1>
+<a name="-instagram-php-api-v2" class="anchor" href="#-instagram-php-api-v2"><span class="octicon octicon-link"></span></a>
+<img src="https://raw.github.com/rikkeisoft/Instagram-PHP-API/master/example/assets/instagram.png" alt="Image"> Instagram PHP API V2</h1>
 
 <h2>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
 
-<p>A PHP wrapper for the Instagram API.<br>
+<p>A PHP wrapper class &amp; CakePHP's Component for the Instagram API.<br>
 Feedback or bug reports are appreciated.</p>
 
 <blockquote>
@@ -193,6 +194,7 @@ Take a look at the <a href="#samples-for-redirect-urls">uri guidlines</a> before
 <ul>
 <li><code>getUser($id)</code></li>
 <li><code>searchUser($name, &lt;$limit&gt;)</code></li>
+<li><code>getUserMedia($id, &lt;$limit&gt;)</code></li>
 </ul><p><strong>Authenticated methods</strong></p>
 
 <ul>
@@ -216,8 +218,8 @@ Take a look at the <a href="#samples-for-redirect-urls">uri guidlines</a> before
 <p><strong>Authenticated methods</strong></p>
 
 <ul>
-<li><code>getUserFollows(&lt;$id&gt;, &lt;$limit&gt;)</code></li>
-<li><code>getUserFollower(&lt;$id&gt;, &lt;$limit&gt;)</code></li>
+<li><code>getUserFollows($id, &lt;$limit&gt;)</code></li>
+<li><code>getUserFollower($id, &lt;$limit&gt;)</code></li>
 <li><code>getUserRelationship($id)</code></li>
 <li>
 <code>modifyRelationship($action, $user)</code>
@@ -250,19 +252,21 @@ Take a look at the <a href="#samples-for-redirect-urls">uri guidlines</a> before
 <li><code>getMedia($id)</code></li>
 <li><code>getPopularMedia()</code></li>
 <li>
-<code>searchMedia($lat, $lng, &lt;$distance&gt;)</code>
+<code>searchMedia($lat, $lng, &lt;$distance&gt;, &lt;$minTimestamp&gt;, &lt;$maxTimestamp&gt;)</code>
 
 <ul>
 <li>
 <code>$lat</code> and <code>$lng</code> are coordinates and have to be floats like: <code>48.145441892290336</code>,<code>11.568603515625</code>
 </li>
 <li>
-<code>$distance</code> Radial distance in meter (max. distance: 5km = 5000)</li>
+<code>$distance</code> Radial distance in meter (default is 1km = 1000, max. is 5km = 5000)</li>
+<li>
+<code>$minTimestamp</code> All media returned will be taken <em>later</em> than this timestamp (default: 5 days ago)</li>
+<li>
+<code>$maxTimestamp</code> All media returned will be taken <em>earlier</em> than this timestamp (default: now)</li>
 </ul>
 </li>
-</ul><p>All <code>&lt;$limit&gt;</code> parameters are optional. If the limit is undefined, all available results will be returned.</p>
-
-<blockquote>
+</ul><blockquote>
 <p><a href="http://instagram.com/developer/endpoints/media/">Sample responses of the Media Endpoints.</a></p>
 </blockquote>
 
@@ -322,6 +326,8 @@ Take a look at the <a href="#samples-for-redirect-urls">uri guidlines</a> before
 </ul><blockquote>
 <p>How to like a Media: <a href="https://gist.github.com/3287237">Example usage</a><br><a href="http://instagram.com/developer/endpoints/likes/">Sample responses of the Likes Endpoints.</a></p>
 </blockquote>
+
+<p>All <code>&lt;...&gt;</code> parameters are optional. If the limit is undefined, all available results will be returned.</p>
 
 <h2>
 <a name="instagram-videos" class="anchor" href="#instagram-videos"><span class="octicon octicon-link"></span></a>Instagram videos</h2>
@@ -415,7 +421,8 @@ Credit for the awesome Instagram icons goes to <a href="http://dribbble.com/RZDE
 <li><a href="https://gist.github.com/cosenary/7267139">User follower</a></li>
 <li><a href="https://gist.github.com/cosenary/2975779">Load more button</a></li>
 <li><a href="https://gist.github.com/cosenary/1711218">User most recent media</a></li>
-<li><a href="http://www.9lessons.info/2012/05/login-with-instagram-php.html">Instagram login (by 9lessons)</a></li>
+<li><a href="https://gist.github.com/cosenary/8803601">Instagram login</a></li>
+<li><a href="http://www.9lessons.info/2012/05/login-with-instagram-php.html">Instagram signup (9lessons tutorial)</a></li>
 </ul><blockquote>
 <p>Let me know if you have to share a code example, too.</p>
 </blockquote>
@@ -423,7 +430,22 @@ Credit for the awesome Instagram icons goes to <a href="http://dribbble.com/RZDE
 <h2>
 <a name="history" class="anchor" href="#history"><span class="octicon octicon-link"></span></a>History</h2>
 
-<p><strong>Instagram 2.0 - 24/12/2013</strong></p>
+<p><strong>Instagram 2.2 - 29/09/2014</strong></p>
+
+<ul>
+<li>Add <code>verifyAccessToken</code> function</li>
+<li>Add CakePHP's Component version</li>
+</ul><p><strong>Instagram 2.1 - 30/01/2014</strong></p>
+
+<ul>
+<li>
+<code>update</code> added min and max_timestamp to <code>searchMedia()</code>
+</li>
+<li>
+<code>update</code> public authentication for <code>getUserMedia()</code> method</li>
+<li>
+<code>fix</code> support for inconsistent pagination return type (<em>relationship endpoint</em>)</li>
+</ul><p><strong>Instagram 2.0 - 24/12/2013</strong></p>
 
 <ul>
 <li>
@@ -521,7 +543,7 @@ Released under the <a href="http://www.opensource.org/licenses/bsd-license.php">
 <p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/cosenary/instagram-php-api/trend.png" alt="Bitdeli Badge"></a></p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/cosenary">cosenary</a></p>
+        <p>This project is maintained by <a href="https://github.com/rikkeisoft">rikkeisoft</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
